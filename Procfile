@@ -1,1 +1,1 @@
-web: bash bin/deploy.sh
+web: bash vendor/bin/deploy.sh
