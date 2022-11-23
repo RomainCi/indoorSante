@@ -16,7 +16,7 @@
 <script>
 import FooterGreenComponent from "@/components/FooterGreenComponent.vue";
 import photo from "../assets/basket.png"
-import lala from "../assets/sport.png"
+import lal from "../assets/sport.png"
 import work from "../assets/work.png"
 import h1 from "../assets/Indoor Santé(3).png"
 import vector from "../assets/Vector 2.png"
@@ -30,7 +30,7 @@ export default {
     return {
       photo: photo,
       h1: h1,
-      images: [lala, work, photo],
+      images: [lal, work, photo],
       i: 0,
       vector: vector,
     }
