@@ -3,8 +3,6 @@
     "scripts": {
         "dev": "vite",
         "build": "npm run production",
-        "prod": "npm run production",
-        "production": "mix --production"
     },
     "devDependencies": {
         "@vue/cli-plugin-typescript": "~5.0.0",
