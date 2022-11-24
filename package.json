@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "npm run production",
+        "build": "npm run production"
     },
     "devDependencies": {
         "@vue/cli-plugin-typescript": "~5.0.0",
