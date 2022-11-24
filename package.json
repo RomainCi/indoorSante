@@ -1,7 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "dev": "vite"
+        "dev": "vite",
+        "build": "vite dev"
     },
     "devDependencies": {
         "@vue/cli-plugin-typescript": "~5.0.0",
