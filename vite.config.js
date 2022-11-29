@@ -8,12 +8,7 @@ export default defineConfig({
             input: ['resources/js/app.js',"resources/css/app.css"],
             refresh: true,
         }),
-        vue({
-            transformAssetUrls: {
-                base: null,
-                includeAbsolute: false,
-            },
-        }),
+        vue(),
         // vue()
     ],
 });
