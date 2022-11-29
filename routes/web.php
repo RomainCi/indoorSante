@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormulaireController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\URL;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('confirmation/email/id={id}&token={token}',[FormulaireController::class,'verificationEmail']);
 Route::get('{any}', function () {
     return view('welcome');
 })->where('any', '.*');

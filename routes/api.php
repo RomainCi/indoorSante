@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormulaireController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
@@ -19,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('formulaire',[FormulaireController::class,"store"]);
 URL::forceScheme('https');

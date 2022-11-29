@@ -180,7 +180,7 @@ h1 {
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.5px #3cb9b1;
-  font-size: 1.6em;
+  font-size: 38px;
 }
 p{
   text-align: center;

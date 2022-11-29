@@ -16,6 +16,7 @@
           <li><a href="#">Qui sommes-nous</a></li>
           <li><a href="#">Offres</a></li>
           <li><a href="#">Créneaux</a></li>
+          <li @click="closeMenu"><router-link to="/contact">Contact</router-link></li>
         </ul>
       </div>
     </transition>
