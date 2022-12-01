@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('confirmation/email/id={id}&token={token}',[FormulaireController::class,'verificationEmail']);
 Route::get('{any}', function () {
     return view('welcome');

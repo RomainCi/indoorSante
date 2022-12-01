@@ -18,7 +18,7 @@ class FormulaireVerificationsJob implements ShouldQueue
     /**
      * The formulaireVerifications instance.
      *
-     * @var FormulaireVerifications
+     * @var FormulaireVerifications  $formulaireVerifications
      */
     protected FormulaireVerifications $formulaireVerifications;
 
