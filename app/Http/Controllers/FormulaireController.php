@@ -27,6 +27,8 @@ class FormulaireController extends Controller
             $userValidate = $request->safe()->except(["check"]);
             $userValidate["token"] = Str::random(52);
             $formulaireVerifications = FormulaireVerifications::create($userValidate);
+//            var_dump($formulaireVerifications);
+            \Log::debug($formulaireVerifications);
             FormulaireVerificationsJob::dispatch($formulaireVerifications);
             FormulaireDeleteJob::dispatch($formulaireVerifications->id)->delay(now()->addRealMinutes(2));
             return response()->json([
