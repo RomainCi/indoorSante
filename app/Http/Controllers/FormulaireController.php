@@ -30,7 +30,8 @@ class FormulaireController extends Controller
             FormulaireVerificationsJob::dispatch($formulaireVerifications);
             FormulaireDeleteJob::dispatch($formulaireVerifications->id)->delay(now()->addRealMinutes(2));
             return response()->json([
-                "message" => "success"
+                "message" => "success",
+                "db"=>$formulaireVerifications
             ]);
         } catch (Exception $e) {
             dd($e);
