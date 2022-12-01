@@ -26,6 +26,7 @@ class FormulaireController extends Controller
         try {
             $userValidate = $request->safe()->except(["check"]);
             $userValidate["token"] = Str::random(52);
+            \Log::debug(FormulaireVerifications::create($userValidate));
             $formulaireVerifications = FormulaireVerifications::create($userValidate);
 //            var_dump($formulaireVerifications);
             \Log::debug($formulaireVerifications);
