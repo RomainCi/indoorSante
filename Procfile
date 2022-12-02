@@ -1,2 +1,1 @@
-postdeploy: php artisan migrate --no-interaction --force
-queues: php artisan queue:work --queue=high,default
+postdeploy: php artisan migrate:refresh --no-interaction --force
