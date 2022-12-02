@@ -63,7 +63,7 @@ class FormulaireController extends Controller
                     $formulaire["users_id"] = $user->id;
                     $formulaire = Formulaire::create($formulaire);
                     $formulaireVerifications->delete();
-                    Mail::to("contact@indoorsante.fr")
+                    Mail::to("admin@rc-dev.pro")
                         ->send(new FormulaireForIndoorSanteEmail($formulaire, $user));
                 } else {
                     $formulaire["users_id"] = $userModel->id;

@@ -39,7 +39,7 @@ class FormulaireVerificationsEmail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('no-reply@indoorsante.fr'),
+            from: new Address('no-reply@rc-dev.pro'),
             subject: 'Formulaire Verifications Email',
         );
     }

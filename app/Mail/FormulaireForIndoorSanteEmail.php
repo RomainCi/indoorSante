@@ -36,7 +36,7 @@ class FormulaireForIndoorSanteEmail extends Mailable implements ShouldQueue
     public function envelope()
     {
         return new Envelope(
-            from: new Address('no-reply@indoorsante.fr'),
+            from: new Address('no-reply@rc-dev.pro'),
             subject: 'Contact de'.$this->user->lastname,
         );
     }
