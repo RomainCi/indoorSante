@@ -27,7 +27,7 @@ class FormulaireController extends Controller
             $userValidate = $request->safe()->except(["check"]);
             $userValidate["token"] = Str::random(52);
 //            \Log::debug(FormulaireVerifications::create($userValidate));
-            $formulaireVerifications = FormulaireVerifications::create([
+             FormulaireVerifications::create([
                 "token" => $userValidate["token"],
                 "content"=> $userValidate["content"],
                 "firstname"=> $userValidate["firstname"],
@@ -37,7 +37,7 @@ class FormulaireController extends Controller
                 "occupation"=> $userValidate["occupation"],
             ]);
 //            FormulaireVerifications::create($userValidate);
-//            $formulaireVerifications = FormulaireVerifications::where('token',$userValidate["token"])->first();
+            $formulaireVerifications = FormulaireVerifications::where('token',$userValidate["token"])->first();
 //            dd($formulaireVerifications);
 //            var_dump($formulaireVerifications);
 //            \Log::debug($formulaireVerifications);
