@@ -19,7 +19,7 @@ import photo from "../assets/basket.png"
 import lal from "../assets/sport.png"
 import work from "../assets/work.png"
 import h1 from "../assets/Indoor Santé(3).png"
-import vectore from "../assets/Vector 2.png"
+import vector from "../assets/Vector 2.png"
 
 export default {
   name: "HomeView.vue",
@@ -32,7 +32,7 @@ export default {
       h1: h1,
       images: [lal, work, photo],
       i: 0,
-      vector: vectore,
+      vector: vector,
     }
   },
   mounted() {

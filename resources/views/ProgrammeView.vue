@@ -35,7 +35,7 @@ main {
   height: 91.5vh;
 }
 
-page2 {
+.page2 {
   height: 92.5vh;
 }
 </style>

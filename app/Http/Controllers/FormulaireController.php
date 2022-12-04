@@ -26,18 +26,11 @@ class FormulaireController extends Controller
         try {
             $userValidate = $request->safe()->except(["check"]);
             $userValidate["token"] = Str::random(52);
-//            \Log::debug(FormulaireVerifications::create($userValidate));
             $formulaireVerifications = FormulaireVerifications::create($userValidate);
-//            FormulaireVerifications::create($userValidate);
-//            $formulaireVerifications = FormulaireVerifications::where('token',$userValidate["token"])->first();
-//            dd($formulaireVerifications);
-//            var_dump($formulaireVerifications);
-//            \Log::debug($formulaireVerifications);
             FormulaireVerificationsJob::dispatch($formulaireVerifications);
             FormulaireDeleteJob::dispatch($formulaireVerifications->id)->delay(now()->addRealMinutes(2));
             return response()->json([
                 "message" => "success",
-                "db" => $formulaireVerifications
             ]);
         } catch (Exception $e) {
             dd($e);
