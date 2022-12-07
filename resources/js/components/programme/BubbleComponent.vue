@@ -60,6 +60,14 @@ export default {
   },
   methods: {
     openBubble(i) {
+      if(this.toggleBubble[i] === true){
+        console.log("oki");
+        this.bubble[this.i] = "bubbleClose";
+        this.toggle = false;
+        this.toggleBubble[this.i] = false;
+        console.log(this.toggleBubble[this.i]);
+        return;
+      }
       this.i = i;
       this.bubble[i] = "animBubble" + i;
       this.toggle = true;

@@ -1,60 +1,31 @@
 <template>
   <section>
-    <h1>Nous rejoindre</h1>
-    <div class="containerImg">
-      <!--      <img :src="map" alt="map">-->
-      <l-map :LControlZoom="false" style="width: 315px;height: 315px;border-radius: 50%" :zoom="16" :center="center"
-             :options="{zoomControl: false}">
-        <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-        <l-marker :lat-lng="center"></l-marker>
-      </l-map>
-      <p>10 Rue Schiller,67000 Strasbourg</p>
-      <button @click="openMap">Ouvrir sur Maps</button>
-      <!--      <a href="https://www.google.com/maps/dir//10+Rue+Schiller,+67000+Strasbourg">lol</a>-->
+    <h2>Nous rejoindre</h2>
+    <div class="containerMap">
+      <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.048013320379!2d7.762803415437351!3d48.58977952753629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c8f709d8796b%3A0x5f7e46b37e4884d2!2s10%20Rue%20Schiller%2C%2067000%20Strasbourg!5e0!3m2!1sfr!2sfr!4v1670185316440!5m2!1sfr!2sfr"
+          width="315" height="315" style="border:none;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>10 Rue Schiller, 67000 Strasbourg</p>
+      <div class="line"></div>
     </div>
+  </section>
+  <section>
+    <h2 class="title">Nous envoyer</h2>
+    <h2>du courrier</h2>
+    <p style="margin: 0;height: 27px">10 rue du Bain Aux Plantes
+      67000 Strasbourg</p>
   </section>
 </template>
 
 <script>
-// var map = L.map("map", {
-//   zoomControl: false
-//   //... other options
-// });
-import map from "../../assets/map.png"
-import "leaflet/dist/leaflet.css"
-import {LMap, LMarker, LTileLayer} from "@vue-leaflet/vue-leaflet";
 
 export default {
   name: "MapComponent",
-  components: {
-    LMap,
-    LTileLayer,
-    LMarker,
-  },
   data() {
-    return {
-      map: map,
-      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      attribution:
-          '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      center: [48.5897387, 7.7649468],
-    }
+    return {}
   },
-  // async beforeMount() {
-  //   // HERE is where to load Leaflet components!
-  //   const {circleMarker} = await import("leaflet/dist/leaflet-src.esm");
-  //
-  //   // And now the Leaflet circleMarker function can be used by the options:
-  //   this.geojsonOptions.pointToLayer = (feature, latLng) =>
-  //       circleMarker(latLng, {radius: 8});
-  //   this.mapIsReady = true;
-  // },
-  methods: {
-    openMap() {
-      window.location.href = "https://www.google.fr/maps/place/48%C2%B035'23.1%22N+7%C2%B045'53.8%22E/@48.5897387,7.7649468,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xafa051be41110159!8m2!3d48.5897387!4d7.7649468"
-      // window.location.href = "https://www.google.com/maps/dir//10+Rue+Schiller,+67000+Strasbourg/@48.5901171,7.750488,13z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x4796c8f709d8796b:0x5f7e46b37e4884d2!3e0";
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -63,47 +34,41 @@ section {
   background: #3CB9B1;
 }
 
-h1 {
+h2 {
   font-family: Amatic SC, sans-serif;
-  margin: 0;
   text-align: center;
   font-size: 28px;
   color: white;
   text-transform: uppercase;
   Letter-spacing: 8px;
+  margin: 0 0 30px;
 }
 
-.containerImg {
+.containerMap {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.containerImg img {
-  width: 80%;
-}
-
-.containerImg p {
+.containerMap p {
   color: white;
   font-family: Inter, sans-serif;
   font-size: 14px;
 }
-
-.mapTest {
-  height: 345px;
-  width: 345px;
+.line{
+  width: 100px;
+  height: 1px;
+  background-color: white;
+  margin-bottom: 20px;
 }
-
-.test {
-  border-radius: 100%;
+.title{
+  margin: 0;
 }
-
-.place-card {
-  display: none;
-}
-
-.leaflet-control-zoom {
-  display: none;
+p{
+  color: white;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  text-align: center;
 }
 </style>

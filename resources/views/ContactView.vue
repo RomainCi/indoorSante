@@ -3,16 +3,19 @@
     <ContactComponent></ContactComponent>
     <MapComponent></MapComponent>
   </main>
+  <FooterGreenComponent></FooterGreenComponent>
 </template>
 
 <script>
 import ContactComponent from "@/components/ContactComponent.vue";
 import MapComponent from "@/components/MapComponent.vue";
+import FooterGreenComponent from "@/components/FooterGreenComponent.vue";
 export default {
   name: "ContactView",
   components: {
     ContactComponent,
-    MapComponent
+    MapComponent,
+    FooterGreenComponent
   }
 
 }

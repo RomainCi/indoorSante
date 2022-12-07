@@ -47,7 +47,7 @@ footer {
 }
 .line{
   width: 100px;
-  height: 2px;
+  height: 1px;
   background-color: #3CB9B1;
 }
 .containerSocial{

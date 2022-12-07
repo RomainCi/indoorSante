@@ -1,5 +1,5 @@
 <template>
-  <section class="containerMain">
+  <section class="containerMain" id="formulaire">
     <div class="containerTitle">
       <h1><span class="dispositif">Page de </span><span class="personnalise"><span class="shadow">c</span><span
           class="shadow">o</span><span class="shadow">n</span><span class="shadow letterT">t</span><span class="shadow">a</span><span
@@ -166,6 +166,7 @@ export default {
 .containerTitle {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 h1 {

@@ -57,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    // this.changePhoto();
+    this.changePhoto();
   },
   methods: {
     changePhoto() {
@@ -128,6 +128,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 .container {
   width: 100%;

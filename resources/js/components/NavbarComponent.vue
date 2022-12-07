@@ -1,7 +1,7 @@
 <template>
   <div class="modal-overlay" v-show="toggle" @click="closeMenu"></div>
-  <nav>
-    <img alt="logo" :src="logo" class="logo">
+  <nav id="nav">
+    <img alt="logo" :src="logo" class="logo" @click="this.$router.push({path:'/'})">
     <div class="menu-hamburger">
       <i @click="openMenu" class="fa-solid fa-bars"></i>
     </div>
@@ -10,13 +10,23 @@
         <ul>
           <div>
             <li class="x" @click="closeMenu"><i class="fa-solid fa-xmark"></i></li>
-            <li @click="closeMenu"><router-link to="/">Accueil</router-link></li>
+            <li @click="closeMenu">
+              <router-link to="/">Accueil</router-link>
+            </li>
           </div>
-          <li @click="closeMenu"><router-link to="/programme">Programme</router-link></li>
-          <li><a href="#">Qui sommes-nous</a></li>
-          <li><a href="#">Offres</a></li>
+          <li @click="closeMenu">
+            <router-link to="/programme">Programme</router-link>
+          </li>
+          <li @click="closeMenu">
+            <router-link to="/qui">Qui sommes-nous</router-link>
+          </li>
+          <li @click="closeMenu">
+            <router-link to="/offres">Offres</router-link>
+          </li>
           <li><a href="#">Créneaux</a></li>
-          <li @click="closeMenu"><router-link to="/contact">Contact</router-link></li>
+          <li @click="closeMenu">
+            <router-link to="/contact">Contact</router-link>
+          </li>
         </ul>
       </div>
     </transition>
@@ -43,7 +53,7 @@ export default {
     closeMenu() {
       this.navLinks = "close";
       this.toggle = false;
-    }
+    },
   }
 }
 </script>
@@ -75,6 +85,7 @@ export default {
   height: 50px;
   align-self: center;
   margin-left: 30px;
+  cursor: pointer;
 }
 
 nav {
@@ -82,6 +93,10 @@ nav {
   justify-content: space-between;
   height: 8.5Vh;
   width: 100%;
+  /*border-bottom: 1px solid black;*/
+  box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75);
 }
 
 nav p {
@@ -189,17 +204,19 @@ a {
     padding: 0;
     height: 100%;
   }
-a::after{
-  display: block;
-  content: "";
-  border-bottom: solid 2px;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-  transform-origin:  0 50%;
-}
-a:hover::after{
-  transform: scaleX(1);
-}
+
+  a::after {
+    display: block;
+    content: "";
+    border-bottom: solid 2px;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 0 50%;
+  }
+
+  a:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 </style>

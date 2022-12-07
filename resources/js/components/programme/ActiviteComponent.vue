@@ -2,25 +2,26 @@
   <div class="containerMain">
     <div class="container">
       <p v-if="page === 1">
-        Pourquoi faire unePourquoi faire unePourquoi faire une Pourquoi faire une Pourquoi faire une
-        Pourquoi faire une
-        Pourquoi faire unePourquoi faire unePourquoi faire unePourquoi faire une Pourquoi faire une unePourquoi faire
-        unePourquoi faire une Pourquoi faire une unePourquoi faire unePourquoi Pourquoi faire unePourquoi faire
-        unePourquoi faire une Pourquoi faire une Pourquoi faire une Pourquoi faire une Pourquoi faire </p>
+        <span>Bienfaits physiologiques</span><br><br>
+        - Amélioration du fonctionnement cardiovasculaire<br>
+        - Amélioration de la composante corporelle<br>
+        - Diminution des facteurs de risque liés à la sédentarité<br>
+        - Amélioration du système ostéoarticulaire et neuromusculaire
+      </p>
       <p v-else-if="page === 2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda at, dolores
-        doloribus enim et
-        eveniet in labore laudantium libero modi nesciunt perspiciatis, possimus quae quas reprehenderit similique
-        temporibus velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor eaque est ex
-        excepturi harum ipsam itaque magnam quis? Animi dolorem eligendi error facere fugiat illo minima officiis quae
-        reprehenderit.</p>
-      <p v-else-if="page === 3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid atque, consectetur
-        dicta, dolor, dolore
-        dolorem doloremque doloribus earum ex expedita facilis impedit maxime mollitia obcaecati quaerat quibusdam rem
-        similique suscipit?</p>
-      <p v-else>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam amet autem, dolores in iusto
-        maxime non nostrum quisquam sed tempore vitae, voluptate voluptatibus. Delectus fugit reprehenderit tempore ut
-        vitae.</p>
+        <span>Bienfaits sociaux</span><br><br>
+        - Gain de confiance en soi<br>
+        - Création de lien social<br>
+        - Découverte de nouveaux centres d’intérêt<br>
+        - Conservation d’un temps pour soi
+      </p>
+      <p v-else-if="page === 3">
+        <span>Bienfaits psychiques</span><br><br>
+        - Réduction du stress<br>
+        - Diminution de l’anxiété<br>
+        - Amélioration du système cognitif<br>
+        - Baisse du risque de dépression
+      </p>
       <div class="contentArrow">
         <i class="fa-solid fa-arrow-left" @click="pageLeft"></i>
         <i class="fa-solid fa-arrow-right" @click="pageRight"></i>
@@ -32,7 +33,6 @@
         <div v-else class="circle"></div>
         <div v-if="circle === 3" class="circlePage"></div>
         <div v-else class="circle"></div>
-        <div v-if="circle === 4" class="circlePage"></div>
         <div v-else class="circle"></div>
       </div>
     </div>
@@ -52,9 +52,10 @@
 
 <script>
 import BubbleComponent from "@/components/programme/BubbleComponent.vue";
+
 export default {
   name: "ActiviteComponent",
-  components:{
+  components: {
     BubbleComponent,
   },
   data() {
@@ -63,7 +64,7 @@ export default {
       page: null,
       circle: null,
       min: 1,
-      max: 4,
+      max: 3,
     }
   },
   mounted() {
@@ -104,23 +105,32 @@ export default {
   font-weight: 800;
   src: url("/resources/assets/fonts/Inter-ExtraBold.ttf") format('truetype');
 }
+
 .containerMain {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .container {
   width: 100%;
   display: flex;
   justify-content: center;
   height: fit-content;
   flex-direction: column;
+  align-items: center;
 }
+
 .container p {
-  width: 80%;
-  margin: 0;
-  text-align: justify;
+  text-align: left;
   align-self: center;
+  margin: 0 10%;
+}
+
+.container p span {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
 }
 
 .container .contentArrow {
@@ -182,7 +192,8 @@ h1 {
   -webkit-text-stroke: 0.5px #3cb9b1;
   font-size: 38px;
 }
-p{
+
+p {
   text-align: center;
   font-family: Inter, sans-serif;
   font-size: 14px;
