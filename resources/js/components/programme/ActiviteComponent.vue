@@ -1,27 +1,52 @@
 <template>
   <div class="containerMain">
     <div class="container">
-      <p v-if="page === 1">
-        <span>Bienfaits physiologiques</span><br><br>
-        - Amélioration du fonctionnement cardiovasculaire<br>
-        - Amélioration de la composante corporelle<br>
-        - Diminution des facteurs de risque liés à la sédentarité<br>
-        - Amélioration du système ostéoarticulaire et neuromusculaire
-      </p>
-      <p v-else-if="page === 2">
-        <span>Bienfaits sociaux</span><br><br>
-        - Gain de confiance en soi<br>
-        - Création de lien social<br>
-        - Découverte de nouveaux centres d’intérêt<br>
-        - Conservation d’un temps pour soi
-      </p>
-      <p v-else-if="page === 3">
-        <span>Bienfaits psychiques</span><br><br>
-        - Réduction du stress<br>
-        - Diminution de l’anxiété<br>
-        - Amélioration du système cognitif<br>
-        - Baisse du risque de dépression
-      </p>
+      <div class="contentTextDesktop">
+        <p>
+          <span>Bienfaits physiologiques</span><br><br>
+          - Amélioration du fonctionnement cardiovasculaire<br>
+          - Amélioration de la composante corporelle<br>
+          - Diminution des facteurs de risque liés à la sédentarité<br>
+          - Amélioration du système ostéoarticulaire et neuromusculaire
+        </p>
+        <p>
+          <span>Bienfaits sociaux</span><br><br>
+          - Gain de confiance en soi<br>
+          - Création de lien social<br>
+          - Découverte de nouveaux centres d’intérêt<br>
+          - Conservation d’un temps pour soi
+        </p>
+        <p>
+          <span>Bienfaits psychiques</span><br><br>
+          - Réduction du stress<br>
+          - Diminution de l’anxiété<br>
+          - Amélioration du système cognitif<br>
+          - Baisse du risque de dépression
+        </p>
+      </div>
+      <div class="contentText">
+        <p v-if="page === 1">
+          <span>Bienfaits physiologiques</span><br><br>
+          - Amélioration du fonctionnement cardiovasculaire<br>
+          - Amélioration de la composante corporelle<br>
+          - Diminution des facteurs de risque liés à la sédentarité<br>
+          - Amélioration du système ostéoarticulaire et neuromusculaire
+        </p>
+        <p v-else-if="page === 2">
+          <span>Bienfaits sociaux</span><br><br>
+          - Gain de confiance en soi<br>
+          - Création de lien social<br>
+          - Découverte de nouveaux centres d’intérêt<br>
+          - Conservation d’un temps pour soi
+        </p>
+        <p v-else-if="page === 3">
+          <span>Bienfaits psychiques</span><br><br>
+          - Réduction du stress<br>
+          - Diminution de l’anxiété<br>
+          - Amélioration du système cognitif<br>
+          - Baisse du risque de dépression
+        </p>
+      </div>
       <div class="contentArrow">
         <i class="fa-solid fa-arrow-left" @click="pageLeft"></i>
         <i class="fa-solid fa-arrow-right" @click="pageRight"></i>
@@ -36,17 +61,19 @@
         <div v-else class="circle"></div>
       </div>
     </div>
-    <div class="containerTitle">
-      <h1><span class="dispositif">Les différents</span><span class="personnalise"><span class="shadow">p</span><span
-          class="shadow">r</span><span class="shadow">o</span><span class="shadow">g</span><span
-          class="shadow">r</span><span
-          class="shadow">a</span><span class="shadow">m</span><span class="shadow">m</span><span
-          class="shadow">e</span><span
-          class="shadow">s</span></span>
-      </h1>
+        <div class="containerTitle">
+          <h1><span class="dispositif">Les différents</span><span class="personnalise"><span class="shadow">p</span><span
+              class="shadow">r</span><span class="shadow">o</span><span class="shadow">g</span><span
+              class="shadow">r</span><span
+              class="shadow">a</span><span class="shadow">m</span><span class="shadow">m</span><span
+              class="shadow">e</span><span
+              class="shadow">s</span></span>
+          </h1>
+        </div>
+    <div class="contentBubble">
+      <BubbleComponent/>
+      <p class="info">Cliquez sur une bulle pour en savoir plus</p>
     </div>
-    <BubbleComponent/>
-    <p>Cliquez sur une bulle pour en savoir plus</p>
   </div>
 </template>
 
@@ -106,6 +133,10 @@ export default {
   src: url("/resources/assets/fonts/Inter-ExtraBold.ttf") format('truetype');
 }
 
+.contentTextDesktop {
+  display: none;
+}
+
 .containerMain {
   display: flex;
   flex-direction: column;
@@ -119,12 +150,25 @@ export default {
   height: fit-content;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contentText {
+  display: flex;
+  /*width: 80%;*/
+  margin-right: 30px;
+  margin-left: 30px;
+  /*justify-content: center;*/
+  align-items: center;
 }
 
 .container p {
-  text-align: left;
-  align-self: center;
-  margin: 0 10%;
+  text-align: justify;
+  font-size: 13px;
+  /*align-self: center;*/
+  /*width: 100%;*/
+
 }
 
 .container p span {
@@ -135,9 +179,10 @@ export default {
 
 .container .contentArrow {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 10px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .container .contentCircle {
@@ -175,7 +220,9 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-
+.contentBubble{
+  align-self: center;
+}
 .dispositif {
   font-family: Inter, sans-serif;
   font-weight: 400;
@@ -201,4 +248,99 @@ p {
   color: #3CB9B1;
 }
 
+.info {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 17px;
+  color: #CECECE;
+}
+
+@media screen and (min-width: 600px) {
+  .contentText {
+    margin-bottom: 30px;
+  }
+
+  .container p span {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  .fa-solid {
+    font-size: 20px;
+  }
+
+  .container .contentCircle .circle {
+    height: 15px;
+    width: 15px;
+  }
+
+  .container .contentCircle .circlePage {
+    height: 15px;
+    width: 15px;
+  }
+
+  .shadow {
+    font-size: 52px;
+  }
+
+  .dispositif {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  p {
+    font-size: 15px;
+  }
+
+  .container {
+    /*background-color: yellow;*/
+    /*flex-direction: row;*/
+    /*justify-content: start;*/
+  }
+
+  .contentText {
+    display: none;
+  }
+
+  .container .contentCircle {
+    display: none;
+  }
+
+  .container .contentArrow {
+    display: none;
+  }
+
+  .contentTextDesktop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container p span {
+    font-size: 20px;
+  }
+
+  .containerMain {
+    flex-direction: row;
+    /*background-color: red;*/
+    justify-content: space-between;
+  }
+  .containerTitle{
+    display: none;
+  }
+  .contentBubble{
+    width: 50%;
+    /*background-color: yellow;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container{
+    /*background-color: cornflowerblue;*/
+    width: 50%;
+  }
+}
 </style>

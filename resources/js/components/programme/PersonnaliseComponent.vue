@@ -19,16 +19,29 @@
         </transition>
       </div>
     </div>
-    <div class="containerTitle">
-      <h1><span class="dispositif">Pourquoi faire une </span><span><span class="shadow">a</span><span
-          class="shadow">c</span><span
-          class="shadow">t</span><span
-          class="shadow">i</span><span class="shadow">v</span><span class="shadow">i</span><span class="shadow">t</span><span
-          class="shadow">é</span></span><span><span class="shadow">p</span><span class="shadow">h</span><span
-          class="shadow">y</span><span
-          class="shadow">s</span><span class="shadow">i</span><span class="shadow">q</span><span class="shadow">u</span><span
-          class="shadow">e</span> <span class="shadow">?</span></span>
-      </h1>
+    <div class="bigContainerTitle">
+      <div class="containerTitle pourquoi">
+        <h1><span class="dispositif">Pourquoi faire une </span><span><span class="shadow">a</span><span
+            class="shadow">c</span><span
+            class="shadow">t</span><span
+            class="shadow">i</span><span class="shadow">v</span><span class="shadow">i</span><span
+            class="shadow">t</span><span
+            class="shadow">é</span></span><span><span class="shadow">p</span><span class="shadow">h</span><span
+            class="shadow">y</span><span
+            class="shadow">s</span><span class="shadow">i</span><span class="shadow">q</span><span
+            class="shadow">u</span><span
+            class="shadow">e</span> <span class="shadow">?</span></span>
+        </h1>
+      </div>
+      <div class="containerTitle containerTitle2">
+        <h1><span class="dispositif">Les différents</span><span class="personnalise"><span class="shadow">p</span><span
+            class="shadow">r</span><span class="shadow">o</span><span class="shadow">g</span><span
+            class="shadow">r</span><span
+            class="shadow">a</span><span class="shadow">m</span><span class="shadow">m</span><span
+            class="shadow">e</span><span
+            class="shadow">s</span></span>
+        </h1>
+      </div>
     </div>
   </div>
 </template>
@@ -37,8 +50,11 @@
 import personnalise from "../../../assets/personnalisé.png"
 import adapte from "../../../assets/Group.png"
 import mamie from "../../../assets/mamie.png"
-import work from "../../../assets/work.png"
-import sport from "../../../assets/sport.png"
+import jeuneHomme from "../../../assets/jeunehomme.png"
+import femme from "../../../assets/femme.png"
+import homme from "../../../assets/hommeviolet.png"
+import papi from "../../../assets/homme.png"
+import jeuneFemme from "../../../assets/jeunefemme.png"
 
 export default {
   name: "PersonnaliseComponent",
@@ -47,8 +63,8 @@ export default {
       personnalise: personnalise,
       test: "Adapté à tous !",
       adapte: adapte,
-      image: mamie,
-      images: [work, mamie, sport],
+      image: papi,
+      images: [femme, mamie,jeuneHomme,homme,jeuneFemme, papi],
       i: 0,
       show: true,
       show1: false,
@@ -124,12 +140,14 @@ export default {
   transform: translateX(200px);
   opacity: 0;
 }
+
 .containerMain {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
 }
+
 .container {
   width: 100%;
   height: 400px;
@@ -145,10 +163,17 @@ export default {
   width: 100%;
   left: 5px;
 }
-
+.bigContainerTitle{
+  display: flex;
+  justify-content: center;
+}
 .containerTitle {
   align-self: center;
   width: fit-content;
+  margin-top: 30px;
+}
+.containerTitle2{
+  display: none;
 }
 
 h2 {
@@ -194,9 +219,48 @@ h1 {
 }
 
 .image {
-  width: 100%;
-  height: 100%;
+  /*width: 100%;*/
+  /*height: 100%;*/
   position: absolute;
-  border-radius: 50%;
+  bottom: 0;
+  /*border-radius: 50%;*/
+}
+
+.pourquoi {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 600px) {
+  .shadow {
+    font-size: 52px;
+  }
+
+  .dispositif {
+    font-size: 35px;
+  }
+
+  .circle {
+    height: 350px;
+    width: 350px;
+  }
+
+  .bottomCircle {
+    bottom: -81px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .bigContainerTitle{
+    display: flex;
+    justify-content: space-around;
+  }
+  .containerTitle{
+    height: 100%;
+  }
+  .containerTitle2{
+    margin-bottom:30px ;
+    display: inline-block;
+  }
 }
 </style>

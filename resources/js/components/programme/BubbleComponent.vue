@@ -552,4 +552,10 @@ p{
     width: 100%;
   }
 }
+@media screen and (min-width: 600px) {
+  .containerBubble{
+    height: 350px;
+    width: 350px;
+  }
+}
 </style>

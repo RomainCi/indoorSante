@@ -102,6 +102,8 @@ span{
 .contentP {
   width: 50%;
   font-size: 13px;
+  color: #3CB9B1;
+  font-family: Inter, sans-serif;
 }
 
 .contentPRight {

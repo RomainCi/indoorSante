@@ -53,8 +53,8 @@
 
 <script>
 import gilles from "../../assets/photoEquipe/Gilles BLOCH.png"
-import cyprien from "../../assets/photoEquipe/cyprien.jpg"
-import quentin from "../../assets/photoEquipe/quentin.jpg"
+import cyprien from "../../assets/photoEquipe/unnamed.png"
+// import quentin from "../../assets/photoEquipe/quentin.jpg"
 import test from "../../assets/photoEquipe/IMG_1819.png"
 export default {
   name: "EquipeComponent",

@@ -28,14 +28,6 @@ export default {
 <style scoped>
 main {
   width: 100%;
-  height: 184vh;
 }
 
-.page1 {
-  height: 91.5vh;
-}
-
-.page2 {
-  height: 92.5vh;
-}
 </style>
