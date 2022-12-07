@@ -10,7 +10,7 @@
 <body>
 <p>Bonjour {{$lastname}},</p>
 <p>Pour confirmer l'envoie de votre message veuillez cliquez sur le lien ci dessous</p>
-<a href="http://127.0.0.1:8000/confirmation/email/id={{$id??null}}&token={{$token??null}}">https://indoorsante.osc-fr1.scalingo.io/confirmation/email?id={{$id??null}}&token={{$token??null}}</a>
+<a href="https://indoorsante.osc-fr1.scalingo.io/confirmation/email/id={{$id??null}}&token={{$token??null}}">https://indoorsante.osc-fr1.scalingo.io/confirmation/email?id={{$id??null}}&token={{$token??null}}</a>
 <p>Le lien expire dans 10min</p>
 <p>Si vous êtes pas à l'origine de l'envoie de ce message veuillez ignorez ceux message, ceci est un message
     automatique.</p>
