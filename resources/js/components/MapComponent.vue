@@ -101,10 +101,10 @@ h2 {
   width: 100%;
   position: relative;
   z-index: 1;
-  /*border-radius: 100%;*/
-
-  /*-khtml-border-radius: 100%;*/
-  /*-moz-border-radius: 100%;*/
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -khtml-border-radius: 100%;
+  -moz-border-radius: 100%;
 }
 
 .containerMap p {
