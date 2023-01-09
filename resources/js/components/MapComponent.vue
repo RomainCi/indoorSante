@@ -4,10 +4,12 @@
       <h2>Nous rejoindre</h2>
     </div>
     <div class="containerMap">
-      <l-map style="height: 350px; width: 350px; border-radius: 100%" :min-zoom="minZoom" :max-zoom="maxZoom"
-             :zoom="zoom"
-             :center="center"
-             :options="{zoomControl: false}"
+      <l-map
+          style="height: 350px; width: 350px; border-radius: 100%;-moz-border-radius: 100%; -webkit-border-radius: 100%;"
+          :min-zoom="minZoom" :max-zoom="maxZoom"
+          :zoom="zoom"
+          :center="center"
+          :options="{zoomControl: false}"
       >
         <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
         <l-marker :lat-lng="markerLatLng">
@@ -97,6 +99,12 @@ h2 {
   align-items: center;
   height: 450px;
   width: 100%;
+  position: relative;
+  z-index: 1;
+  /*border-radius: 100%;*/
+
+  /*-khtml-border-radius: 100%;*/
+  /*-moz-border-radius: 100%;*/
 }
 
 .containerMap p {
