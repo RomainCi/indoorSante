@@ -1,13 +1,15 @@
 <template>
-    <main>
-      <section class="page1">
-        <PersonnaliseComponent/>
-      </section>
-      <section class="page2">
-        <ActiviteComponent/>
-      </section>
-    </main>
-<FooterWhiteComponent></FooterWhiteComponent>
+  <div>
+  <main>
+    <section class="page1">
+      <PersonnaliseComponent/>
+    </section>
+    <section class="page2">
+      <ActiviteComponent/>
+    </section>
+  </main>
+    <FooterWhiteComponent back="none"></FooterWhiteComponent>
+  </div>
 </template>
 
 <script>
@@ -28,6 +30,10 @@ export default {
 <style scoped>
 main {
   width: 100%;
-}
 
+}
+div{
+  background-image: url("../assets/backgroundImage.png");
+  background-size: cover;
+}
 </style>

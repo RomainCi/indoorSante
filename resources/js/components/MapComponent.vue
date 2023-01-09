@@ -1,16 +1,26 @@
 <template>
   <section>
-    <h2>Nous rejoindre</h2>
+    <div>
+      <h2>Nous rejoindre</h2>
+    </div>
     <div class="containerMap">
-      <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.048013320379!2d7.762803415437351!3d48.58977952753629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c8f709d8796b%3A0x5f7e46b37e4884d2!2s10%20Rue%20Schiller%2C%2067000%20Strasbourg!5e0!3m2!1sfr!2sfr!4v1670185316440!5m2!1sfr!2sfr"
-          width="315" height="315" style="border:none;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <l-map style="height: 350px; width: 350px; border-radius: 100%" :min-zoom="minZoom" :max-zoom="maxZoom"
+             :zoom="zoom"
+             :center="center"
+             :options="{zoomControl: false}"
+      >
+        <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+        <l-marker :lat-lng="markerLatLng">
+          <l-popup>Indoor-santé</l-popup>
+        </l-marker>
+
+      </l-map>
       <p>10 Rue Schiller, 67000 Strasbourg</p>
       <div class="line"></div>
+      <button @click="openMap">Ouvrir sur map</button>
     </div>
   </section>
-  <section>
+  <section class="containerAdresse">
     <h2 class="title">Nous envoyer</h2>
     <h2>du courrier</h2>
     <p style="margin: 0;height: 27px">10 rue du Bain Aux Plantes
@@ -19,13 +29,48 @@
 </template>
 
 <script>
+import {LCircle, LControlZoom, LIcon, LMap, LMarker, LPopup, LTileLayer} from "@vue-leaflet/vue-leaflet";
+import "leaflet/dist/leaflet.css"
 
 export default {
   name: "MapComponent",
-  data() {
-    return {}
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+    LIcon,
+    LPopup,
+    LCircle,
+    LControlZoom
   },
-  methods: {}
+  data() {
+    return {
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution:
+          '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      zoom: 16,
+      center: [48.589801, 7.764869],
+      markerLatLng: [48.589801, 7.764869],
+      minZoom: 3,
+      maxZoom: 18,
+      myPosition: null,
+    }
+  },
+  methods: {
+    openMap() {
+      this.geolocation();
+      console.log(this.myPosition)
+
+    },
+    async geolocation() {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        this.myPosition = [latitude, longitude];
+        window.open(`https://www.google.com/maps/dir/${this.myPosition[0]},${this.myPosition[1]}/10+Rue+Schiller,+67000+Strasbourg/@48.5870343,7.7441244,15z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x4796c8f709d8796b:0x5f7e46b37e4884d2!2m2!1d7.7649904!2d48.589788!3e0`, '_blank');
+      });
+    },
+  }
 }
 </script>
 
@@ -42,6 +87,7 @@ h2 {
   text-transform: uppercase;
   Letter-spacing: 8px;
   margin: 0 0 30px;
+  padding-top: 30px;
 }
 
 .containerMap {
@@ -49,6 +95,8 @@ h2 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 450px;
+  width: 100%;
 }
 
 .containerMap p {
@@ -56,19 +104,67 @@ h2 {
   font-family: Inter, sans-serif;
   font-size: 14px;
 }
-.line{
+
+.line {
   width: 100px;
   height: 1px;
   background-color: white;
   margin-bottom: 20px;
 }
-.title{
+
+.title {
   margin: 0;
 }
-p{
+
+p {
   color: white;
   font-family: Inter, sans-serif;
   font-size: 14px;
   text-align: center;
+}
+
+button {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+  border: 2px solid white;
+  background: white;
+  color: #7ACFCA;
+  height: 30px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  position: relative;
+  z-index: 4;
+}
+
+@media screen and (min-width: 1200px) {
+  .containerAdresse {
+    display: none;
+  }
+
+  section {
+    background-color: white;
+  }
+
+  h2 {
+    color: #3CB9B1;
+  }
+
+  p {
+    color: #3CB9B1 !important;
+  }
+
+  button {
+    background: linear-gradient(0deg, #3CB9B1, #3CB9B1),
+    linear-gradient(0deg, #7ACFCA, #7ACFCA);
+    border: 2px solid #7ACFCA;
+    color: white;
+  }
+
+  .containerMap {
+    justify-content: space-between;
+  }
 }
 </style>

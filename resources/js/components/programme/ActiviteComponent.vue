@@ -3,21 +3,21 @@
     <div class="container">
       <div class="contentTextDesktop">
         <p>
-          <span>Bienfaits physiologiques</span><br><br>
+          <span>Bienfaits physiologiques</span><br>
           - Amélioration du fonctionnement cardiovasculaire<br>
           - Amélioration de la composante corporelle<br>
           - Diminution des facteurs de risque liés à la sédentarité<br>
           - Amélioration du système ostéoarticulaire et neuromusculaire
         </p>
         <p>
-          <span>Bienfaits sociaux</span><br><br>
+          <span>Bienfaits sociaux</span><br>
           - Gain de confiance en soi<br>
           - Création de lien social<br>
           - Découverte de nouveaux centres d’intérêt<br>
           - Conservation d’un temps pour soi
         </p>
         <p>
-          <span>Bienfaits psychiques</span><br><br>
+          <span>Bienfaits psychiques</span><br>
           - Réduction du stress<br>
           - Diminution de l’anxiété<br>
           - Amélioration du système cognitif<br>
@@ -61,15 +61,15 @@
         <div v-else class="circle"></div>
       </div>
     </div>
-        <div class="containerTitle">
-          <h1><span class="dispositif">Les différents</span><span class="personnalise"><span class="shadow">p</span><span
-              class="shadow">r</span><span class="shadow">o</span><span class="shadow">g</span><span
-              class="shadow">r</span><span
-              class="shadow">a</span><span class="shadow">m</span><span class="shadow">m</span><span
-              class="shadow">e</span><span
-              class="shadow">s</span></span>
-          </h1>
-        </div>
+    <div class="containerTitle">
+      <h1><span class="dispositif">Les différents</span><span class="personnalise"><span class="shadow">p</span><span
+          class="shadow">r</span><span class="shadow">o</span><span class="shadow">g</span><span
+          class="shadow">r</span><span
+          class="shadow">a</span><span class="shadow">m</span><span class="shadow">m</span><span
+          class="shadow">e</span><span
+          class="shadow">s</span></span>
+      </h1>
+    </div>
     <div class="contentBubble">
       <BubbleComponent/>
       <p class="info">Cliquez sur une bulle pour en savoir plus</p>
@@ -97,6 +97,10 @@ export default {
   mounted() {
     this.page = this.i;
     this.circle = this.i;
+    const el = document.querySelector('.contentText');
+    el.addEventListener('touchstart', event => this.touchstart(event));
+    el.addEventListener('touchmove', event => this.touchmove(event));
+    el.addEventListener('touchend', () => this.touchend());
   },
   methods: {
     pageLeft() {
@@ -115,7 +119,6 @@ export default {
       this.page = this.i;
       this.circle = this.i;
     },
-
   }
 }
 </script>
@@ -156,19 +159,24 @@ export default {
 
 .contentText {
   display: flex;
-  /*width: 80%;*/
+  width: 305px;
+  padding: 10px;
+  border-radius: 30px;
   margin-right: 30px;
   margin-left: 30px;
-  /*justify-content: center;*/
+  background-color: #3CB9B1;
+  height: 160px;
   align-items: center;
 }
 
 .container p {
   text-align: justify;
   font-size: 13px;
-  /*align-self: center;*/
-  /*width: 100%;*/
 
+}
+
+.fa-solid {
+  color: #2e8e88;
 }
 
 .container p span {
@@ -179,10 +187,10 @@ export default {
 
 .container .contentArrow {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 10px;
   margin-top: 10px;
-  width: 100%;
+  width: 305px;
 }
 
 .container .contentCircle {
@@ -220,9 +228,11 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-.contentBubble{
+
+.contentBubble {
   align-self: center;
 }
+
 .dispositif {
   font-family: Inter, sans-serif;
   font-weight: 400;
@@ -245,7 +255,7 @@ p {
   font-family: Inter, sans-serif;
   font-size: 14px;
   margin: 0;
-  color: #3CB9B1;
+  color: white;
 }
 
 .info {
@@ -257,7 +267,9 @@ p {
 
 @media screen and (min-width: 600px) {
   .contentText {
-    margin-bottom: 30px;
+    height: fit-content;
+    padding: 20px;
+    width: 320px;
   }
 
   .container p span {
@@ -289,11 +301,16 @@ p {
   .dispositif {
     font-size: 35px;
   }
+
+  .container .contentArrow {
+    width: 320px;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   p {
-    font-size: 15px;
+    /*font-size: 16px;*/
+    color: white;
   }
 
   .container {
@@ -317,10 +334,14 @@ p {
   .contentTextDesktop {
     display: flex;
     flex-direction: column;
+    background-color: #3CB9B1;
+    border-radius: 30px;
+    margin: 0;
   }
 
   .container p span {
-    font-size: 20px;
+    font-size: 19px;
+    color: #7ACFCA;
   }
 
   .containerMain {
@@ -328,19 +349,39 @@ p {
     /*background-color: red;*/
     justify-content: space-between;
   }
-  .containerTitle{
+
+  .containerTitle {
     display: none;
   }
-  .contentBubble{
+
+  .contentBubble {
     width: 50%;
     /*background-color: yellow;*/
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .container{
+
+  .container {
     /*background-color: cornflowerblue;*/
     width: 50%;
+    margin-bottom: 0;
+  }
+
+  .contentTextDesktop {
+    height: 330px;
+    padding: 0 10px 10px;
+  }
+
+  .contentTextDesktop p {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+  }
+
+  .contentTextDesktop p span {
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 }
 </style>

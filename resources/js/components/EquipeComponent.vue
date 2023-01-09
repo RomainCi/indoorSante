@@ -21,29 +21,17 @@
         <p>Président</p>
       </div>
       <div class="containerCircle">
-<!--        <div class="circle"></div>-->
         <img class="circle" :src="photo.cyprien" alt="cyprien">
         <p>nom et prénom</p>
         <p>Post</p>
       </div>
       <div class="containerCircle">
-<!--        <div class="circle"></div>-->
         <img class="circle" :src="photo.quentin" alt="quentin">
         <p>nom et prénom</p>
         <p>Post</p>
       </div>
       <div class="containerCircle">
-        <div class="circle"></div>
-        <p>nom et prénom</p>
-        <p>Post</p>
-      </div>
-      <div class="containerCircle">
-        <div class="circle"></div>
-        <p>nom et prénom</p>
-        <p>Post</p>
-      </div>
-      <div class="containerCircle">
-        <div class="circle"></div>
+        <img :src="photo.hugo" alt="hugo" class="circle">
         <p>nom et prénom</p>
         <p>Post</p>
       </div>
@@ -53,17 +41,19 @@
 
 <script>
 import gilles from "../../assets/photoEquipe/Gilles BLOCH.png"
-import cyprien from "../../assets/photoEquipe/unnamed.png"
-// import quentin from "../../assets/photoEquipe/quentin.jpg"
-import test from "../../assets/photoEquipe/IMG_1819.png"
+import cyprien from "../../assets/photoEquipe/cyprienPeronet.png"
+import hugo from "../../assets/photoEquipe/hugoKaspar.png"
+import quentin from "../../assets/photoEquipe/quentinTerrisse.png"
+
 export default {
   name: "EquipeComponent",
-  data(){
-    return{
-      photo:{
-        gilles : gilles,
+  data() {
+    return {
+      photo: {
+        gilles: gilles,
         cyprien: cyprien,
-        quentin:test
+        hugo: hugo,
+        quentin: quentin,
       }
     }
   }
@@ -128,7 +118,7 @@ h1 {
 .containerPhoto {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
   justify-content: center;
 }
 

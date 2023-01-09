@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('formulaire',[FormulaireController::class,"store"]);
-URL::forceScheme('https');
+//URL::forceScheme('https');

@@ -25,4 +25,4 @@ Route::get('{any}', function () {
     return view('welcome');
 })->where('any', '.*');
 
-URL::forceScheme('https');
+//URL::forceScheme('https');

@@ -1,5 +1,7 @@
 <template>
-  <footer>
+  <footer :style="{
+              'background-color': `${back}`,
+            }">
     <div class="line"></div>
     <div  class="containerSocial">
       <img alt="instagram" :src="instagram">
@@ -20,6 +22,9 @@ import telephone from "../../assets/iconsSocial/Phone_green.png"
 import mail from "../../assets/iconsSocial/Mail_green.png"
 export default {
   name: "FooterWhiteComponent",
+  props:{
+    back:String
+  },
   data() {
     return {
       instagram: instagram,
@@ -39,7 +44,6 @@ export default {
   src: url("/resources/assets/fonts/Inter-Regular.ttf") format('truetype');
 }
 footer {
-  background-color: white;
   height:7.5vh;
   display: flex;
   flex-direction: column;

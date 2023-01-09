@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     openBubble(i) {
-      if(this.toggleBubble[i] === true){
+      if (this.toggleBubble[i] === true) {
         console.log("oki");
         this.bubble[this.i] = "bubbleClose";
         this.toggle = false;
@@ -89,6 +89,7 @@ export default {
   font-weight: 400;
   src: url("/resources/assets/fonts/Inter-Regular.ttf") format('truetype');
 }
+
 $bubble0Bottom: 56px;
 $bubble0Left: 16px;
 $bubble1Bottom: 0;
@@ -282,15 +283,18 @@ $bubble1Left: 96px;
   display: block;
   background: radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%);
 }
-p{
-  color:#3CB9B1;
+
+p {
+  color: #3CB9B1;
   text-align: center;
   font-size: 16px;
   font-family: Inter, sans-serif;
 }
-.content{
+
+.content {
   font-size: 21px;
 }
+
 @keyframes write-opa {
   0% {
     opacity: 0;
@@ -552,10 +556,67 @@ p{
     width: 100%;
   }
 }
+
 @media screen and (min-width: 600px) {
-  .containerBubble{
+  .containerBubble {
     height: 350px;
     width: 350px;
+    margin-top: 30px;
+  }
+  .sizeBubble2 {
+    width: 170px;
+    height: 170px;
+    left: 179px;
+  }
+  .sizeBubble4 {
+    left: 26%;
+    height: 88px;
+    width: 88px;
+    bottom:135px;
+  }
+  .sizeBubble1 {
+    width: 130px;
+    height: 130px;
+    left: 99px;
+  }
+  .sizeBubble0 {
+    width: 100px;
+    height: 100px;
+    left: 13px;
+    bottom: 69px;
+  }
+  .sizeBubble3 {
+    left: 30%;
+    top: 0;
+    height: 120px;
+    width: 120px;
+  }
+  .animBubble0{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  .animBubble1{
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+  .animBubble3{
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+  .animBubble2{
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+  .animBubble4{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
   }
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
   <footer>
-    <div class="line"></div>
-    <div  class="containerSocial">
-      <img alt="instagram" :src="instagram">
-      <img alt="facebook" :src="facebook">
-      <img alt="linkedin" :src="linkedin">
+    <div class="line">
+<!--      lol-->
+    </div>
+    <div class="containerSocial">
+      <a href="https://www.instagram.com/indoor_sante/" target="_blank"> <img alt="instagram" :src="instagram"></a>
+      <a href="https://www.facebook.com/indoorsante" target="_blank"> <img alt="facebook" :src="facebook"></a>
+      <a href="https://www.linkedin.com/company/indoor-sante/" target="_blank"> <img alt="linkedin" :src="linkedin"></a>
       <img alt="telephone" :src="telephone">
       <img alt="mail" :src="mail">
     </div>
@@ -39,19 +41,22 @@ export default {
   font-weight: 400;
   src: url("/resources/assets/fonts/Inter-Regular.ttf") format('truetype');
 }
+
 footer {
   background-color: #3CB9B1;
-  height:7.5vh;
+  height: 9.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.line{
+
+.line {
   width: 100px;
   height: 1px;
   background-color: white;
 }
-.containerSocial{
+
+.containerSocial {
   margin-top: 10px;
   display: flex;
   width: 100%;
@@ -59,13 +64,16 @@ footer {
   justify-content: center;
   gap: 15px;
 }
-.containerSocial img{
+
+.containerSocial img {
   cursor: pointer;
 }
-p{
+
+p {
   font-size: 0.5em;
   margin: 12px 0 0;
 }
+
 p a {
   font-family: Inter, sans-serif;
   text-decoration: none;

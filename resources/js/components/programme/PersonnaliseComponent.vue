@@ -21,16 +21,16 @@
     </div>
     <div class="bigContainerTitle">
       <div class="containerTitle pourquoi">
-        <h1><span class="dispositif">Pourquoi faire une </span><span><span class="shadow">a</span><span
+        <h1><span class="dispositif">Pourquoi faire une </span><div class="contentSpan"><span><span class="shadow">a</span><span
             class="shadow">c</span><span
             class="shadow">t</span><span
             class="shadow">i</span><span class="shadow">v</span><span class="shadow">i</span><span
             class="shadow">t</span><span
-            class="shadow">é</span></span><span><span class="shadow">p</span><span class="shadow">h</span><span
+            class="shadow">é</span></span><span class="test"><span class="shadow">p</span><span class="shadow">h</span><span
             class="shadow">y</span><span
             class="shadow">s</span><span class="shadow">i</span><span class="shadow">q</span><span
             class="shadow">u</span><span
-            class="shadow">e</span> <span class="shadow">?</span></span>
+            class="shadow">e</span> <span class="shadow">?</span></span></div>
         </h1>
       </div>
       <div class="containerTitle containerTitle2">
@@ -73,7 +73,7 @@ export default {
     }
   },
   mounted() {
-    this.changePhoto();
+    // this.changePhoto();
   },
   methods: {
     changePhoto() {
@@ -123,7 +123,7 @@ export default {
 
 .slide-fade-left-enter-from,
 .slide-fade-left-leave-to {
-  transform: translateX(-200px);
+  transform: translateX(-70px);
   opacity: 0;
 }
 
@@ -137,7 +137,7 @@ export default {
 
 .slide-fade-right-enter-from,
 .slide-fade-right-leave-to {
-  transform: translateX(200px);
+  transform: translateX(70px);
   opacity: 0;
 }
 
@@ -175,7 +175,10 @@ export default {
 .containerTitle2{
   display: none;
 }
-
+.contentSpan{
+  display: flex;
+  flex-direction: column;
+}
 h2 {
   margin: 0;
 }
@@ -219,11 +222,8 @@ h1 {
 }
 
 .image {
-  /*width: 100%;*/
-  /*height: 100%;*/
   position: absolute;
   bottom: 0;
-  /*border-radius: 50%;*/
 }
 
 .pourquoi {
@@ -247,6 +247,16 @@ h1 {
   .bottomCircle {
     bottom: -81px;
   }
+  .slide-fade-left-enter-from,
+  .slide-fade-left-leave-to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  .slide-fade-right-enter-from,
+  .slide-fade-right-leave-to {
+    transform: translateX(100px);
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -261,6 +271,18 @@ h1 {
   .containerTitle2{
     margin-bottom:30px ;
     display: inline-block;
+    width: 49%;
+  }
+  .test{
+    margin-left:20px ;
+  }
+  .pourquoi{
+    width: 49%;
+  }
+  .contentSpan{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
   }
 }
 </style>
