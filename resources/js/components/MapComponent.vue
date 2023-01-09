@@ -5,7 +5,7 @@
     </div>
     <div class="containerMap">
       <l-map
-          style="height: 350px; width: 350px; border-radius: 100%;-moz-border-radius: 100%; -webkit-border-radius: 100%;"
+          style="height: 350px; width: 350px;-moz-border-radius: 100%;-webkit-border-radius: 100%;border-collapse: separate;"
           :min-zoom="minZoom" :max-zoom="maxZoom"
           :zoom="zoom"
           :center="center"
@@ -112,7 +112,9 @@ h2 {
   font-family: Inter, sans-serif;
   font-size: 14px;
 }
-
+.hey{
+  border-radius: 10% !important;
+}
 .line {
   width: 100px;
   height: 1px;
