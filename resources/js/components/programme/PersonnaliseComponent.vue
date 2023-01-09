@@ -7,7 +7,6 @@
           class="shadow">i</span><span class="shadow">s</span><span class="shadow">é</span></span>
       </h1>
     </div>
-
     <div class="container">
       <div class="circle">
         <h2><img class="bottomCircle" :src="adapte" alt="adapte"></h2>
@@ -207,6 +206,8 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.5px #3cb9b1;
   font-size: 42px;
+  /*outline: none;*/
+  outline-color: red;
 }
 
 .circle {

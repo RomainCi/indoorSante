@@ -5,7 +5,7 @@
     </div>
     <div class="containerMap">
       <l-map
-          style="height: 350px; width: 350px;-moz-border-radius: 100%;-webkit-border-radius: 100%;border-collapse: separate;"
+          style="z-index:0;height: 350px; width: 350px;-moz-border-radius: 100%;-webkit-border-radius: 100%;border-collapse: separate;"
           :min-zoom="minZoom" :max-zoom="maxZoom"
           :zoom="zoom"
           :center="center"
@@ -15,7 +15,6 @@
         <l-marker :lat-lng="markerLatLng">
           <l-popup>Indoor-santé</l-popup>
         </l-marker>
-
       </l-map>
       <p>10 Rue Schiller, 67000 Strasbourg</p>
       <div class="line"></div>
@@ -112,9 +111,11 @@ h2 {
   font-family: Inter, sans-serif;
   font-size: 14px;
 }
-.hey{
+
+.hey {
   border-radius: 10% !important;
 }
+
 .line {
   width: 100px;
   height: 1px;
