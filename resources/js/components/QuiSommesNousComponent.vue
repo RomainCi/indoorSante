@@ -116,4 +116,9 @@ span{
   border-radius: 50%;
   background-color: red;
 }
+@media screen and (min-width: 1200px){
+  .shadow{
+    font-size: 45px;
+  }
+}
 </style>

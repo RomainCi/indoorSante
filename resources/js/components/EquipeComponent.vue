@@ -142,5 +142,9 @@ h1 {
   font-size: 14px;
   color: #3cb9b1;
 }
-
+@media screen and (min-width: 1200px){
+  .shadow{
+    font-size: 45px;
+  }
+}
 </style>

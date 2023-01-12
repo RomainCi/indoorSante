@@ -1,12 +1,15 @@
 <template>
   <section>
     <div class="containerTitle">
-      <h1><span class="dispositif">Nos</span><span class="personnalise"><span class="shadow">o</span><span
+      <h1 :class="apple"><span class="dispositif">Nos</span><span class="personnalise"><span class="shadow">o</span><span
           class="shadow">f</span><span class="shadow">f</span><span class="shadow">r</span><span
           class="shadow">e</span><span
           class="shadow">s</span></span>
       </h1>
       <h2>Grand publiques</h2>
+      <div class="info">
+        <p>Cliquez sur les cartes pour en savoir plus</p>
+      </div>
     </div>
     <div class="containerCard">
       <div class="scene scene--card">
@@ -16,12 +19,16 @@
             v-bind:class="{ flipMe: cardOne === 'flipped' }"
         >
           <div class="card__face card__face--front">
-            <h4>Pep +</h4>
-            <p>test</p>
+            <h4>PEP</h4>
+            <p>Nous proposons plusieurs programmes d'entraînement personnalisé (PEP) spécifiques, adaptés aux
+              différentes pathologies chroniques et ALD sur présentation d'une ordonnance. Les séances sont encadrées en
+              petit groupe (6 à 12 personnes) sur site ou en distanciel (PEP'Activisio).Ces programmes durent 6 mois à
+              raison de 2 à 3 séances/semaine.
+            </p>
           </div>
           <div class="card__face card__face--back">
-            <h4>Pep +</h4>
-            <p>test</p>
+            <h4>TARIFS</h4>
+            <p>165€/6 mois (prise en charge possible par votre mutuelle).</p>
           </div>
         </div>
       </div>
@@ -32,12 +39,17 @@
             v-bind:class="{ flipMe: cardTwo === 'flipped' }"
         >
           <div class="card__face card__face--front">
-            <h4>Pep +</h4>
-            <p>test</p>
+            <h4>MULTI-ACTIVITES</h4>
+            <p>Différentes activités ludiques accessibles à tout public en libre accès, vous permettant d&#39;améliorer
+              votre endurance, renforcer l'ensemble de vos muscles et favoriser votre bien-être. Les séances sont
+              encadrées en petit groupe (6 à 12 personnes).
+              Les activités proposées par Indoor Santé : rameur, renforcement musculaire, Avifit, Pilates, cardio-
+              boxe, danse latine et marche. Ces activités sont ouvertes à toute personne souhaitant reprendre ou
+              continuer une activité physique.</p>
           </div>
           <div class="card__face card__face--back">
-            <h4>Pep +</h4>
-            <p>test</p>
+            <h4>TARIFS</h4>
+            <p>Carnet de 10 séances : 150€.</p>
           </div>
         </div>
       </div>
@@ -48,66 +60,19 @@
             v-bind:class="{ flipMe: cardThree === 'flipped' }"
         >
           <div class="card__face card__face--front">
-            <h4>Pep +</h4>
-            <p>test</p>
+            <h4>COACHING PERSONNALISÉ</h4>
+            <p>Séances individuelles encadrées par l'un de nos éducateurs sportifs qualifiés et diplômés (Bac +5 en
+              physiologie de l'entrainement / activité physique adaptée). Que vous soyez sportif ou débutant en
+              activité physique, votre encadrant vous proposera un entrainement individualisé en fonction de vos
+              besoins et objectifs. Les activités du coaching (cardio, renforcement musculaire etc.) sont
+              sélectionnées sur-mesure.</p>
           </div>
           <div class="card__face card__face--back">
-            <h4>Pep +</h4>
-            <p>test</p>
+            <h4>TARIFS</h4>
+            <p>Carnet de 5 séances individuelles : 175€.</p>
           </div>
         </div>
       </div>
-      <div class="scene scene--card">
-        <div
-            class="card"
-            @click="cardFour === 'start' ? (cardFour = 'flipped' ) : (cardFour = 'start' )"
-            v-bind:class="{ flipMe: cardFour === 'flipped' }"
-        >
-          <div class="card__face card__face--front">
-            <h4>Pep +</h4>
-            <p>test</p>
-          </div>
-          <div class="card__face card__face--back">
-            <h4>Pep +</h4>
-            <p>test</p>
-          </div>
-        </div>
-      </div>
-      <div class="scene scene--card">
-        <div
-            class="card"
-            @click="cardFive === 'start' ? (cardFive = 'flipped' ) : (cardFive = 'start' )"
-            v-bind:class="{ flipMe: cardFive === 'flipped' }"
-        >
-          <div class="card__face card__face--front">
-            <h4>Pep +</h4>
-            <p>test</p>
-          </div>
-          <div class="card__face card__face--back">
-            <h4>Pep +</h4>
-            <p>test</p>
-          </div>
-        </div>
-      </div>
-      <div class="scene scene--card">
-        <div
-            class="card"
-            @click="cardSix === 'start' ? (cardSix = 'flipped' ) : (cardSix = 'start' )"
-            v-bind:class="{ flipMe: cardSix === 'flipped' }"
-        >
-          <div class="card__face card__face--front">
-            <h4>Pep +</h4>
-            <p>test</p>
-          </div>
-          <div class="card__face card__face--back">
-            <h4>Pep +</h4>
-            <p>test</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="info">
-      <p>Cliquez sur les cartes pour en savoir plus</p>
     </div>
   </section>
 </template>
@@ -122,10 +87,23 @@ export default {
       cardThree: "start",
       cardFour: "start",
       cardFive: "start",
-      cardSix: "start"
+      cardSix: "start",
+      apple:null
     }
   },
-  methods: {}
+  mounted() {
+    console.log(navigator.userAgent);
+    const userAgent = navigator.userAgent;
+    if(userAgent.indexOf("Safari") != -1){
+      if (userAgent.indexOf("Chrome") != -1){
+        console.log("chrome");
+      }else{
+        this.apple = "noRotate";
+      }
+    }
+  },
+  methods: {},
+
 }
 </script>
 
@@ -147,7 +125,9 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-
+.noRotate {
+  transform: rotate(0deg);
+}
 .dispositif {
   font-family: Inter, sans-serif;
   font-weight: 400;
@@ -179,11 +159,13 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 21px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .scene {
-  width: 142px;
-  height: 142px;
+  width: 280px;
+  height: 280px;
   border-radius: 32px;
   perspective: 1000px;
 }
@@ -225,20 +207,29 @@ h2 {
 
 .card__face h4 {
   font-family: Amatic SC, sans-serif;
-  font-size: 28px;
-  margin: 5px 0 0 10px;
+  font-size: 26px;
+  margin: 5px 0 0 0;
+  text-align: center;
 }
 
 .card__face p {
   font-size: 13px;
   font-family: Inter, sans-serif;
   font-weight: 400;
-  margin: 0 0 0 10px;
+  margin: 10px 10px 0 10px;
+  text-align: center;
 }
-.info p{
+
+.info p {
   text-align: center;
   font-family: Inter, sans-serif;
   font-size: 13px;
   color: #3CB9B1;
+}
+
+@media screen and (min-width: 1200px){
+  .shadow{
+    font-size: 45px;
+  }
 }
 </style>

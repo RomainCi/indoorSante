@@ -4,6 +4,7 @@ import ProgrammeView from "../../views/ProgrammeView.vue";
 import ContactView from "../../views/ContactView.vue";
 import QuiSommesNousView from "../../views/QuiSommesNousView.vue";
 import OffresView from "../../views/OffresView.vue";
+import CréneauxView from "../../views/CréneauxView.vue";
 
 const routes = [
     {
@@ -31,10 +32,22 @@ const routes = [
         name: "offres",
         component: OffresView
     },
+    {
+        path:"/creneaux",
+        name:"créneaux",
+        component: CréneauxView
+    }
 ]
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (to.hash) {
+            return {
+                el: to.hash,
+            }
+        }
+    },
 });
 
 export default router

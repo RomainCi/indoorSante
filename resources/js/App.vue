@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="top">
     <header>
       <NavbarComponent></NavbarComponent>
     </header>
@@ -14,10 +14,20 @@ export default {
   name: "App.vue",
   components: {
     NavbarComponent
-  }
+  },
+  data(){
+    return{
+      navigateur:null,
+    }
+  },
 }
 </script>
 
 <style scoped>
-
+header{
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: white;
+}
 </style>

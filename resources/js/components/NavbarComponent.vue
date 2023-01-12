@@ -1,7 +1,7 @@
 <template>
   <div class="modal-overlay" v-show="toggle" @click="closeMenu"></div>
   <nav id="nav">
-    <img alt="logo" :src="logo" class="logo" @click="this.$router.push({path:'/'})">
+    <img alt="logo" :src="logo" class="logo" @click="this.$router.push({path:'/',hash:'#top'})">
     <div class="menu-hamburger">
       <i @click="openMenu" class="fa-solid fa-bars"></i>
     </div>
@@ -11,21 +11,23 @@
           <div>
             <li class="x" @click="closeMenu"><i class="fa-solid fa-xmark"></i></li>
             <li @click="closeMenu">
-              <router-link to="/">Accueil</router-link>
+              <router-link :to="{name:'home', hash:'#top'}">Accueil</router-link>
             </li>
           </div>
           <li @click="closeMenu">
-            <router-link to="/programme">Programme</router-link>
+            <router-link :to="{name:'programme', hash:'#top'}">Programme</router-link>
           </li>
           <li @click="closeMenu">
-            <router-link to="/qui">Qui sommes-nous</router-link>
+            <router-link :to="{name:'qui', hash:'#top'}">Qui sommes-nous</router-link>
           </li>
           <li @click="closeMenu">
-            <router-link to="/offres">Offres</router-link>
+            <router-link :to="{name:'offres', hash:'#top'}">Offres</router-link>
           </li>
-          <li><a href="#">Créneaux</a></li>
           <li @click="closeMenu">
-            <router-link to="/contact">Contact</router-link>
+            <router-link :to="{name:'créneaux', hash:'#top'}">Créneaux</router-link>
+          </li>
+          <li @click="closeMenu">
+            <router-link :to="{name:'contact', hash:'#top'}">Contact</router-link>
           </li>
         </ul>
       </div>
@@ -63,6 +65,11 @@ export default {
   width: 0;
 }
 
+/*.test{*/
+/*  background-color: red;*/
+/*  position: sticky;*/
+/*  top: 10px;*/
+/*}*/
 @font-face {
   font-family: 'Inter';
   font-weight: 400;
@@ -97,6 +104,10 @@ nav {
   box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 5px -4px rgba(0, 0, 0, 0.75);
+  /*position: sticky;*/
+  /*top:30px;*/
+  /*background-color: red;*/
+  /*z-index: 200;*/
 }
 
 nav p {
@@ -144,6 +155,7 @@ a {
 
   .open {
     position: fixed;
+    top: 0;
     right: 0;
     height: 100vh;
     width: 280px;

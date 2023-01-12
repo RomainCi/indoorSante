@@ -1,5 +1,6 @@
 <template>
   <section class="containerMain" id="formulaire">
+    <shadow-title-component miniText="null" :titres="titre"></shadow-title-component>
     <div class="containerTitle">
       <h1><span class="dispositif">Page de </span><span class="personnalise"><span class="shadow">c</span><span
           class="shadow">o</span><span class="shadow">n</span><span class="shadow letterT">t</span><span class="shadow">a</span><span
@@ -87,11 +88,14 @@ import vector from "../../assets/Vector 2.png"
 import useVuelidate from "@vuelidate/core"
 import {email, maxLength, minLength, required} from "@vuelidate/validators"
 import axios from "axios";
-
+import ShadowTitleComponent from "@/components/ShadowTitleComponent.vue";
 export default {
   name: "ContactComponent",
   setup() {
     return {v$: useVuelidate()};
+  },
+  components:{
+    ShadowTitleComponent
   },
   validations() {
     return {
@@ -105,7 +109,7 @@ export default {
         },
         email: {required, email},
         content: {required},
-      }
+      },
     }
   },
   data() {
@@ -127,6 +131,9 @@ export default {
       contentC: "correctT",
       show: false,
       vector: vector,
+      titre:[
+        "c","o","n","t","a","c","t"
+      ]
     }
   },
   methods: {
@@ -234,7 +241,7 @@ h1 {
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.5px #3cb9b1;
-  font-size: 38px;
+  font-size: 31px;
 }
 
 .letterT {

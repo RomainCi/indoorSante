@@ -247,7 +247,7 @@ h1 {
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.5px #3cb9b1;
-  font-size: 38px;
+  font-size: 31px;
 }
 
 p {
@@ -295,12 +295,12 @@ p {
   }
 
   .shadow {
-    font-size: 52px;
+    font-size: 45px;
   }
 
-  .dispositif {
-    font-size: 35px;
-  }
+  /*.dispositif {*/
+  /*  font-size: 35px;*/
+  /*}*/
 
   .container .contentArrow {
     width: 320px;
@@ -329,14 +329,6 @@ p {
 
   .container .contentArrow {
     display: none;
-  }
-
-  .contentTextDesktop {
-    display: flex;
-    flex-direction: column;
-    background-color: #3CB9B1;
-    border-radius: 30px;
-    margin: 0;
   }
 
   .container p span {
@@ -369,8 +361,13 @@ p {
   }
 
   .contentTextDesktop {
-    height: 330px;
     padding: 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #3CB9B1;
+    border-radius: 30px;
+    margin: 0;
+    max-width: 350px;
   }
 
   .contentTextDesktop p {
@@ -382,6 +379,11 @@ p {
   .contentTextDesktop p span {
     margin-bottom: 5px;
     margin-top: 5px;
+  }
+}
+@media screen and (min-width: 1200px){
+  .shadow{
+    font-size: 45px !important;
   }
 }
 </style>

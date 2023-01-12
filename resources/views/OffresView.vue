@@ -16,6 +16,11 @@ export default {
     OffresComponent,
     OffresProComponent,
     FooterWhiteComponent
+  },
+  mounted() {
+    document.title = "Offres Indoor santé";
+    document.querySelector('meta[name="description"]').content = "Séances collectives, coaching personnalisé, sport en entreprise et plein d’autres encore. Retrouvez\n" +
+        "l’ensemble de nos offres et choisissez celle qui vous convient.";
   }
 }
 </script>

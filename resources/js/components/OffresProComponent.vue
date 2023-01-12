@@ -6,29 +6,56 @@
           class="shadow">e</span><span
           class="shadow">s</span></span>
       </h1>
-      <h2>A la demande</h2>
+      <h2>Pour les professionnels</h2>
     </div>
     <div class="containerCircle">
       <div class="contentCircle">
         <div class="circle"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta distinctio est ex fugiat hic laborum
-          nihil, odio officiis optio provident quos reiciendis repudiandae rerum soluta ullam voluptatem! Adipisci,
-          sunt.</p>
+        <div class="contentText">
+          <h4>Diagnostic Forme et Santé (DFS)</h4>
+          <p>Le DFS est un outil de prévention qui permet de visualiser votre
+            niveau de forme et de santé à l’aide d’une évaluation de la condition physique et d’un
+            questionnaire de qualité de vie. A l’issue du diagnostic, vous bénéficierez de préconisations
+            personnalisées basées sur les standards définis par l&#39;Organisation Mondiale de la Santé (OMS) et le
+            Programme National Nutrition Santé (PNNS).</p>
+          <p class="devis">Tarif: Sur devis</p>
+        </div>
+      </div>
+      <div class="contentCircle contentCircleLeft">
+        <div class="circle"></div>
+        <div class="contentText">
+          <h4>Mobil.Sport.Lab (MSL)</h4>
+          <p class="textRight">Le MSL est un équipement mobile qui se transforme en salle de sport
+            connectée (60m²), entièrement équipée, déployable n'importe où pour permettre à tout public
+            d'avoir accès à une activité physique pour améliorer sa santé. Il permet au plus grand nombre
+            d'accéder aux équipements et compétences visant à mener une activité physique adaptée (APA).</p>
+          <p class="textRight devis">Tarif: Sur devis</p>
+        </div>
       </div>
       <div class="contentCircle">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta distinctio est ex fugiat hic laborum
-          nihil, odio officiis optio provident quos reiciendis repudiandae rerum soluta ullam voluptatem! Adipisci,
-          sunt.</p>
         <div class="circle"></div>
+        <div class="contentText">
+          <h4>Sport en entreprise</h4>
+          <p>Nous proposons différents types de prestations:<br>
+            - Séances d’activité physique<br>
+            - Animations et team building<br>
+            - Formation prévention des TMS<br>
+            - Réveils musculaires</p>
+          <p class="devis">Tarif: Sur devis</p>
+        </div>
       </div>
-      <div class="contentCircle">
+      <div class="contentCircle contentCircleLeft">
         <div class="circle"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta distinctio est ex fugiat hic laborum
-          nihil, odio officiis optio provident quos reiciendis repudiandae rerum soluta ullam voluptatem! Adipisci,
-          sunt.</p>
+        <div class="contentText">
+          <h4>KICK THE CAT</h4>
+          <p class="textRight">Application permettant de réaliser un «test de marche 6’» en réalité augmentée et
+            ainsi connaitre son niveau de sédentarité. L’application peut être utilisée pour cartographier de
+            manière agrégée et anonymisée l’état de santé ou de sédentarité d’une population.</p>
+          <p class="textRight devis">Tarif: Sur devis</p>
+        </div>
       </div>
       <div class="button">
-        <button @click="this.$router.push({path:'/contact#formulaire'})"><a href="#nav">Page contact</a></button>
+        <button @click="this.$router.push({path:'/contact',hash:'#top'})">contact</button>
       </div>
     </div>
 
@@ -87,26 +114,36 @@ h2 {
 
 .contentCircle {
   display: flex;
-  /*flex-direction: column;*/
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.contentCircle {
-  display: flex;
-  gap: 20px;
+  gap: 21px;
+  margin-bottom: 40px;
 }
 
 .circle {
-  height: 136px;
-  width: 136px;
+  height: 160px;
+  width: 160px;
   background-color: red;
   border-radius: 50%;
 }
 
+.contentText {
+  width: 80%;
+  /*background-color: yellow;*/
+}
+h4{
+  color: #3CB9B1;
+  font-family: Amatic SC, sans-serif;
+  font-size: 26px;
+  text-align: center;
+}
 p {
-  width: 50%;
-  background-color: yellow;
+  text-align: center;
+  color: #3CB9B1;
+  margin: 10px 10px 0;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
 }
 
 button {
@@ -124,11 +161,57 @@ button {
   display: flex;
   justify-content: center;
 }
-a{
+
+a {
   text-decoration: none;
   color: white;
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 12px;
+}
+@media screen and (min-width: 930px) {
+  h4{
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  p{
+    margin: 0;
+    font-size: 15px;
+    text-align: left;
+  }
+  .textRight{
+    text-align: right;
+  }
+  .contentCircle{
+    flex-direction: row;
+    justify-content: space-around;
+    /*gap: 100px;*/
+    max-width: 903px;
+    /*background-color: blue;*/
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .circle{
+    height: 280px;
+    width: 280px;
+  }
+  .contentCircleLeft{
+    flex-direction: row-reverse;
+  }
+  .contentText{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .devis{
+    margin-top: 10px;
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 1200px){
+  .shadow{
+    font-size: 45px;
+  }
 }
 </style>

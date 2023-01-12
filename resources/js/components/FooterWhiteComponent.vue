@@ -7,8 +7,8 @@
       <img alt="instagram" :src="instagram">
       <img alt="facebook" :src="facebook">
       <img alt="linkedin" :src="linkedin">
-      <img alt="telephone" :src="telephone">
-      <img alt="mail" :src="mail">
+      <img @click="callTelephone" alt="telephone" :src="telephone">
+      <img @click="sendMail" alt="mail" :src="mail">
     </div>
     <p><a href="#">Mentions légales</a></p>
   </footer>
@@ -32,6 +32,14 @@ export default {
       linkedin: linkedin,
       telephone: telephone,
       mail: mail,
+    }
+  },
+  methods:{
+    sendMail(){
+      window.location = "mailto:info@indoor-sante.fr";
+    },
+    callTelephone(){
+      window.location = "tel:+33645969998 "
     }
   }
 }

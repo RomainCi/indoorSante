@@ -1,6 +1,6 @@
 <template>
   <div class="containerMain">
-    <div class="containerTitle">
+    <div class="containerTitle" id="titre">
       <h1><span class="dispositif">Un dispositif</span><span class="personnalise"><span class="shadow">p</span><span
           class="shadow">e</span><span class="shadow">r</span><span class="shadow">s</span><span class="shadow">o</span><span
           class="shadow">n</span><span class="shadow">n</span><span class="shadow">a</span><span class="shadow">l</span><span
@@ -205,9 +205,7 @@ h1 {
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.5px #3cb9b1;
-  font-size: 42px;
-  /*outline: none;*/
-  outline-color: red;
+  font-size: 31px;
 }
 
 .circle {
@@ -232,13 +230,9 @@ h1 {
 }
 
 @media screen and (min-width: 600px) {
-  .shadow {
-    font-size: 52px;
-  }
-
-  .dispositif {
-    font-size: 35px;
-  }
+  /*.dispositif {*/
+  /*  font-size: 35px;*/
+  /*}*/
 
   .circle {
     height: 350px;
@@ -284,6 +278,11 @@ h1 {
     display: flex;
     flex-direction: row;
     align-self: center;
+  }
+}
+@media screen and (min-width: 1200px){
+  .shadow{
+    font-size: 45px;
   }
 }
 </style>

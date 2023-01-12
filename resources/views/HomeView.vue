@@ -20,12 +20,12 @@ import lal from "../assets/sport.png"
 import work from "../assets/work.png"
 import h1 from "../assets/Indoor Santé(3).png"
 import vector from "../assets/Vector 2.png"
-
 export default {
   name: "HomeView.vue",
   components: {
     FooterGreenComponent,
   },
+
   data() {
     return {
       photo: photo,
@@ -37,6 +37,19 @@ export default {
   },
   mounted() {
     this.changePhoto();
+    document.title = "Accueil Indoor santé";
+    document.querySelector('meta[name="description"]').content = "Venez pratiquer une activité physique encadrée et adaptée à vos besoins et objectifs avec les\n" +
+        "experts du sport santé.";
+    // console.log(navigator);
+
+      // if(userAgent.indexOf('Mobi') != -1){
+      //   console.log("mobile");
+      // }
+    // if(system.indexOf("iPhone") != -1 || system.indexOf("iPad") != -1){
+    //   console.log("apple");
+    // }else{
+    //   console.log("pas apple")
+    // }
   },
   methods: {
     changePhoto() {
@@ -112,14 +125,14 @@ p {
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: 0.5px white;
-  font-size: 1.3em;
+  font-size: 31px;
 }
-@media screen and (min-width: 1500px){
+@media screen and (min-width: 1200px){
   h1{
     bottom: 15px;
   }
   .shadow{
-    font-size: 1.7em;
+    font-size: 45px;
   }
 }
 </style>

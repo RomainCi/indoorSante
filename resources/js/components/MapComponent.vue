@@ -23,8 +23,8 @@
   </section>
   <section class="containerAdresse">
     <h2 class="title">Nous envoyer</h2>
-    <h2>du courrier</h2>
-    <p style="margin: 0;height: 27px">10 rue du Bain Aux Plantes
+    <h2 class="courrier">du courrier</h2>
+    <p class="adresse">10 rue du Bain Aux Plantes
       67000 Strasbourg</p>
   </section>
 </template>
@@ -149,7 +149,13 @@ button {
   position: relative;
   z-index: 4;
 }
-
+.courrier{
+  padding-top: 15px;
+}
+.adresse{
+  margin: 0;
+  padding-bottom: 14px;
+}
 @media screen and (min-width: 1200px) {
   .containerAdresse {
     display: none;

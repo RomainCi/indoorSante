@@ -23,7 +23,12 @@ export default {
     PersonnaliseComponent,
     ActiviteComponent,
     FooterWhiteComponent
+  },
+  mounted() {
+    document.title = "Programmes Indoor santé";
+    document.querySelector('meta[name="description"]').content = "Des programmes d’entrainement personnalisés conçus spécialement pour vous afin d’optimiser et de faciliter votre remise à l’effort."
   }
+
 }
 </script>
 

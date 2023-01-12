@@ -16,6 +16,11 @@ export default {
     QuiSommesNousComponent,
     EquipeComponent,
     FooterWhiteComponent
+  },
+  mounted() {
+    document.title = "Qui-sommes-nous? Indoor santé";
+    document.querySelector('meta[name="description"]').content = "Indoor Santé, de la genèse du projet à aujourd’hui, découvrez l’histoire du mariage entre le sport, la santé et la recherche."
+
   }
 }
 </script>

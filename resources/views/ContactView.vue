@@ -26,12 +26,20 @@ import MapComponent from "@/components/MapComponent.vue";
 import FooterGreenComponent from "@/components/FooterGreenComponent.vue";
 import vector from "../assets/Vector 2.png"
 
+
 export default {
   name: "ContactView",
   components: {
     ContactComponent,
     MapComponent,
     FooterGreenComponent
+  },
+  props:{
+    navigateur:String
+  },
+  mounted() {
+    document.title = "Contact Indoor santé";
+    document.querySelector('meta[name="description"]').content = "Vous avez besoin d’informations? Contactez-nous dès à présent par e-mail ou par téléphone.";
   },
   data() {
     return {
@@ -106,7 +114,7 @@ main {
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
     -webkit-background-clip: text;
     -webkit-text-stroke: 0.5px #3cb9b1;
-    font-size: 38px;
+    font-size: 45px;
   }
 
   .letterT {
